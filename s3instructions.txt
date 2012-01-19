@@ -1,0 +1,30 @@
+
+Download s3tools from s3tools.org to your own computer.
+See the INSTALL file for general installation instructions.
+This will probably work:
+  unzip s3cmd-1.1.0-beta3.zip
+  cd s3cmd-1.1.0-beta3
+  sudo python setup.py install
+
+You might want to alias s3cmd to point to .../s3cmd-1.1.0-beta3/s3cmd
+(wherever you put it).
+
+See the README file in s3cmd-1.1.0-beta3 for sample commands to use the
+tools, or go to http://s3tools.org/s3cmd
+
+You first have to configure with
+  s3cmd --configure
+To find your key and secret key, go to the AWS console, click on your name
+at the top, and select "Security Credentials" from the dropdown menu.  You
+need the Access Key ID and Secret Access Key.
+
+Then you can just hit <return> for all the other questions until the last
+one, type 'y' to save.
+
+
+
+
+
+
+
+
