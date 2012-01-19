@@ -13,6 +13,8 @@ import os
 from pyclaw import data
 import numpy as np
 
+# Top CC directory (should have subdirectories topo and dtopo):
+CCdir = os.path.abspath('..')
 
 #------------------------------
 def setrun(claw_pkg='geoclaw'):
@@ -285,27 +287,30 @@ def setgeo(rundata):
     # for topography, append lines of the form
     #    [topotype, minlevel, maxlevel, t1, t2, fname]
 
-    import os
-    homedir = os.environ['HOME']
-    topodir = homedir + '/topo/CC'
-    geodata.topofiles.append([3, 1, 1, 0., 1.e10, \
-                              topodir + '/etopo1min139E147E34N41N.asc'])
-    geodata.topofiles.append([3, 1, 1, 0., 1.e10, \
-                              topodir + '/etopo4min120E72W40S60N.asc']) 
-    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, \
-                              topodir + '/ca_north36secm.asc'])  
-    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, \
-                              topodir + '/cc-1sec-c.asc'])
-    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, \
-                              topodir + '/cc-1sec-c.asc'])
+    topodir = CCdir + '/topo/etopo'
+    fname = os.path.join(topodir,'etopo1min139E147E34N41N.asc')
+    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname)
+    
+    fname = topodir +'/etopo4min120E72W40S60N.asc'
+    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname)
+ 
+    topodir = CCdir + '/topo/CC'
+    fname = topodir,'ca_north36secm.asc')
+    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname) 
+    
+    fname = topodir + '/cc-1sec-c.asc'
+    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname)  
+     
+    fname = topodir + '/cc-1_3sec-c.asc'
+    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname)  
+     
 
-
-    # Earthquake from my deformation files
+    # Earthquake source:
     # == setdtopo.data values ==
     geodata.dtopofiles = []
     # for moving topography, append lines of the form :   
     #    [minlevel, maxlevel, fname]
-    dtopodir = homedir + '/dtopo/tohoku'
+    dtopodir = CCdir + '/dtopo/tohoku'
     fname = dtopodir + '/ucsb3-1min.tt1'
     print 'dtopo file: ',fname
     geodata.dtopofiles.append([1,3,3,fname])
