@@ -121,7 +121,8 @@ def setrun(claw_pkg='geoclaw'):
     elif clawdata.outstyle == 2:
         # Specify a list of output times.
         from numpy import arange, linspace
-        clawdata.tout = list(linspace(3600*9.5,3600*11.5,25))
+        #clawdata.tout = list(linspace(3600*9.5,3600*11.5,25))
+        clawdata.tout = list(linspace(3600*9.5,3600*10.0,7))
         clawdata.nout = len(clawdata.tout)
 
     elif clawdata.outstyle == 3:
@@ -288,21 +289,21 @@ def setgeo(rundata):
     #    [topotype, minlevel, maxlevel, t1, t2, fname]
 
     topodir = CCdir + '/topo/etopo'
-    fname = os.path.join(topodir,'etopo1min139E147E34N41N.asc')
-    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname)
+    fname = topodir + '/etopo1min139E147E34N41N.asc'
+    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname])
     
     fname = topodir +'/etopo4min120E72W40S60N.asc'
-    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname)
+    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname])
  
     topodir = CCdir + '/topo/CC'
-    fname = topodir,'ca_north36secm.asc')
-    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname) 
+    fname = topodir + '/ca_north36secm.asc'
+    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname]) 
     
     fname = topodir + '/cc-1sec-c.asc'
-    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname)  
+    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname])  
      
     fname = topodir + '/cc-1_3sec-c.asc'
-    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname)  
+    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname])  
      
 
     # Earthquake source:

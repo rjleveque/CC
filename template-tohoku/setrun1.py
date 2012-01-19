@@ -290,21 +290,21 @@ def setgeo(rundata):
 
     
     topodir = CCdir + '/topo/etopo'
-    fname = os.path.join(topodir,'etopo1min139E147E34N41N.asc')
-    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname)
+    fname = topodir + '/etopo1min139E147E34N41N.asc'
+    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname])
     
     fname = topodir +'/etopo4min120E72W40S60N.asc'
-    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname)
+    geodata.topofiles.append([3, 1, 1, 0., 1.e10, fname])
  
     topodir = CCdir + '/topo/CC'
-    fname = topodir,'ca_north36secm.asc')
-    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname) 
+    fname = topodir + '/ca_north36secm.asc'
+    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname]) 
     
     fname = topodir + '/cc-1sec-c.asc'
-    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname)  
+    geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname])  
      
     #fname = topodir + '/cc-1_3sec-c.asc'
-    #geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname)  
+    #geodata.topofiles.append([-3, 1, 1, 32000, 1.e10, fname])  
      
 
     # Earthquake source:

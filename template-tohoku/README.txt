@@ -18,9 +18,12 @@ Usage:
     mkdir -p _output2   # first create this directory if it doesn't already exist
     cp _output1/fort.chk0081 _output2/restart.data    # if not already there
     cp _output1/fort.amr _output2    # if not already there
+    rm -f .data .output .plots       # insure code is rerun with new data
     make .plots -f Makefile2
     
-NOTE:  Many things cannot be changed between runs, so if you want to change the max. number of levels or refinement ratios, for example, they need to be changed in both Makefiles and 
+NOTE:  Many things cannot be changed between runs, so if you want
+to change the max. number of levels or refinement ratios, for
+example, they need to be changed in both Makefiles and
 
 
 Things to modify for Tohoku:

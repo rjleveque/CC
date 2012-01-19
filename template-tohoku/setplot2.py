@@ -295,7 +295,7 @@ def setplot(plotdata):
     #-----------------------------------------
     plotfigure = plotdata.new_plotfigure(name='gauge plot', figno=300, \
                     type='each_gauge')
-    plotfigure.clf_each_gauge = False
+    plotfigure.clf_each_gauge = True
 
     # Set up for axes in this figure:
     plotaxes = plotfigure.new_plotaxes()
