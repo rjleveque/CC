@@ -69,3 +69,6 @@ os.chdir(subdir)
 fname = 'ucsb3-1min.tt1'
 topotools.get_topo(fname, remote_directory, force)
 
+fname = 'fujii.txydz'
+topotools.get_topo(fname, remote_directory, force)
+
